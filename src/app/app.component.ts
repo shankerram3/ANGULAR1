@@ -25,6 +25,7 @@ export class AppComponent {
     return this.allItems.filter(item => this.filter === 'done' ? item.done : !item.done);
   }
   addItem(description: string) {
+    if (!description) return
     this.allItems.unshift({
       description,
       done: false
@@ -33,6 +34,6 @@ export class AppComponent {
   remove(item:any) {
     this.allItems.splice(this.allItems.indexOf(item), 1);
   }
-  
-  
+
+
 }
